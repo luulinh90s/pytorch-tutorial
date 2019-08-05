@@ -1,5 +1,6 @@
 import torch
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 import numpy as np 
 import argparse
 import pickle 
@@ -9,6 +10,26 @@ from build_vocab import Vocabulary
 from model import EncoderCNN, DecoderRNN
 from PIL import Image
 
+
+def visualize(image_path, words, smooth=True):
+    """
+    Visualizes caption with weights at every word.
+    :param image_path: path to image that has been captioned
+    :param words: caption
+    :param smooth: smooth weights?
+    """
+    
+    # Uncomment to switch backend and choose your backend is necessary
+    #plt.switch_backend("TKAgg")
+    image = Image.open(image_path)
+    image = image.resize([14 * 24, 14 * 24], Image.LANCZOS)
+
+    plt.text(0, 1, '%s' % (words), color='yellow', backgroundcolor='black', fontsize=12)
+    plt.imshow(image)
+
+    plt.set_cmap(cm.Greys_r)
+    plt.axis('image')
+    plt.show()
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -60,11 +81,14 @@ def main(args):
         if word == '<end>':
             break
     sentence = ' '.join(sampled_caption)
+    sentence = sentence.replace('<start>', '')
+    sentence = sentence.replace('<end>', '')
     
     # Print out the image and the generated caption
     print (sentence)
-    image = Image.open(args.image)
-    plt.imshow(np.asarray(image))
+    #image = Image.open(args.image)
+    visualize(args.image, sentence)
+    #plt.imshow(np.asarray(image))
     
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
