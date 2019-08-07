@@ -52,7 +52,7 @@ $ python train.py
 ```bash
 $ python sample.py --image='png/example.png'
 ```
-
+![](https://github.com/luulinh90s/pytorch-tutorial/blob/master/tutorials/03-advanced/image_captioning/png/red_car.png)
 <br>
 
 ## Pretrained model
