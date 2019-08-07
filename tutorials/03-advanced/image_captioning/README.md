@@ -2,6 +2,9 @@
 - Using MSCOCO 2014 dataset
 - Read `split_mscoco.py` for details
 
+TODO:
+- Determine which classes should be used for 20 classes, then pick images with objects only in these 20 classes? => Its not necessary because for image with a single annotation, we still have label and we can measure the performance of image captioning.
+
 # Image Captioning
 The goal of image captioning is to convert a given input image into a natural language description. The encoder-decoder framework is widely used for this task. The image encoder is a convolutional neural network (CNN). In this tutorial, we used [resnet-152](https://arxiv.org/abs/1512.03385) model pretrained on the [ILSVRC-2012-CLS](http://www.image-net.org/challenges/LSVRC/2012/) image classification dataset. The decoder is a long short-term memory (LSTM) network. 
 
