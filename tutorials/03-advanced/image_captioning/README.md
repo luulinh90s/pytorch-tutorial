@@ -1,8 +1,11 @@
 # Data preparation
+## Dataset
 - Using MSCOCO 2014 dataset because this dataset contains both image captioning annotations and objects detection annotations
-- Read `split_mscoco.py` for details
-- To run the data splitting, make two dirs `train2014/` and `val2014/` then run `python split_mscoco.py`
-
+- Read `cl_split_mscoco.py` for details
+## Data splitting
+- To run the data splitting, make two dirs `train2014/` and `val2014/` then run `python cl_split_mscoco.py`
+## Data loader
+- To make dataloader, run `python cl_dataloader.py`, this dataloader will contain classes which you organized based on ImageFolder structure. Refer this structure here: https://pytorch.org/tutorials/beginner/data_loading_tutorial.html
 TODO:
 - Determine which classes should be used for 20 classes, then pick images with objects only in these 20 classes? => Its not necessary because for image with a single annotation, we still have label and we can measure the performance of image captioning.
 
