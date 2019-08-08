@@ -14,6 +14,7 @@ from torchvision import transforms
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+
 def main(args):
     # Create model directory
     if not os.path.exists(args.model_path):

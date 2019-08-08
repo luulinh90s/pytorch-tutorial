@@ -16,7 +16,7 @@ data_transform = transforms.Compose([
 dataset = datasets.ImageFolder(root='train2014/',
                                transform=data_transform)
 dataset_loader = torch.utils.data.DataLoader(dataset,
-                                             batch_size = class_num, shuffle=True,
+                                             batch_size=class_num, shuffle=True,
                                              num_workers=4)
 
 pass
