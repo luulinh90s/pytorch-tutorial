@@ -1,6 +1,7 @@
 # Data preparation
-- Using MSCOCO 2014 dataset
+- Using MSCOCO 2014 dataset because this dataset contains both image captioning annotations and objects detection annotations
 - Read `split_mscoco.py` for details
+- To run the data splitting, make two dirs `train2014/` and `val2014/` then run `python split_mscoco.py`
 
 TODO:
 - Determine which classes should be used for 20 classes, then pick images with objects only in these 20 classes? => Its not necessary because for image with a single annotation, we still have label and we can measure the performance of image captioning.
