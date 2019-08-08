@@ -60,5 +60,5 @@ def split_data(json_path, train=True):
         print("Finish {} splitting dataset from {}".format(dataset, json_path))
 
 
-#split_data('instances_train2014.json')
+split_data('instances_train2014.json')
 split_data('instances_val2014.json', train=False)
